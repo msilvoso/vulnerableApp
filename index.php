@@ -27,7 +27,7 @@ require_once 'includes/functions.php';
  */
 if (isset($_GET['action']) && !empty($_GET['action']))
 {
-	if ((!isset($_SESSION['login']) || empty($_SESSION['login'])) && $_GET['action']!='login.php')
+	if ((!isset($_SESSION['login']) || empty($_SESSION['login'])) && $_GET['action']!='login.php' && $_GET['action']!='forgot.php')
 	{
 		require_once 'actions/list.php';
 		errorMessage('You have to be logged in to execute this action');
@@ -70,14 +70,14 @@ else:
 			<br/>
 			<input type="submit" name="submit" value="submit"/>
 		</form>
+        <a href="/index.php?action=forgot.php">I forgot my password</a>
 	</div>
 <?php
 endif;
 ?>
 <div id="main">
 <?php
-//errors
-if (isset($_SESSION['error']) && is_array($_SESSION['error']) && count($_SESSION['error']))
+if (isset($_SESSION['error']) && is_array($_SESSION['error']) && count($_SESSION['error'])) //errors
 {
 	foreach($_SESSION['error'] as $errorMessage):
 ?>

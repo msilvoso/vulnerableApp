@@ -23,7 +23,7 @@
 		$view=
 <<<FREE
 	<form action="/index.php?action=commentInsert.php" method="post">
-		<label for="text"><br/>
+		<label for="text">New comment</label><br/>
 		<textarea name="text" cols="80" rows="10"></textarea><br/>
 		<input type="hidden" name="entry" value="$entry"/>
 		<input type="submit" name="submit" value="Submit">

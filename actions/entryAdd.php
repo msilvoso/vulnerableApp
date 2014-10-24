@@ -20,7 +20,7 @@
 	$view=
 <<<FREE
 	<form action="/index.php?action=entryInsert.php" method="post">
-		<label for="text"><br/>
+		<label for="text">New entry</label><br/>
 		<textarea name="text" cols="80" rows="10"></textarea><br/>
 		<input type="submit" name="submit" value="Submit">
 	</form>
