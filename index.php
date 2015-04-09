@@ -34,14 +34,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 	}
 	else
 	{
-		require_once 'actions/'.$_GET['action'];
+		set_include_path(get_include_path() . PATH_SEPARATOR . 'actions/');
+		require_once $_GET['action'];
 	}
 }
 else
 {
 	require_once 'actions/list.php';
 }
-
 /*
  * display
  */
