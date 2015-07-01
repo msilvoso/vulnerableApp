@@ -19,8 +19,8 @@
 
 /**
  * Displays an error Message
- * 
- * @param string $msg the message to display 
+ *
+ * @param string $msg the message to display
  */
 function errorMessage($msg)
 {
@@ -35,20 +35,37 @@ function errorMessage($msg)
 }
 
 /**
+ * Displays an success Message
+ *
+ * @param string $msg the message to display
+ */
+function successMessage($msg)
+{
+    if (!isset($_SESSION['success']) || !is_array($_SESSION['success']))
+    {
+        $_SESSION['success']=array($msg);
+    }
+    else
+    {
+        $_SESSION['success'][]=$msg;
+    }
+}
+
+/**
  * mysql_query wrapper
- * 
- * @param string $query SQL query 
+ *
+ * @param string $query SQL query
  */
 function dbQuery($query,$conn)
 {
 	$result=mysql_query($query,$conn);
-	
+
 	//check result
 	if (!$result) {
 		$message  = 'Invalid query: ' . mysql_error() . "\n";
 		$message .= 'Whole query: ' . $query;
 		die($message);
 	}
-	
+
 	return $result;
 }

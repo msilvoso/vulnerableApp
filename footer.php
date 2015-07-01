@@ -1,3 +1,5 @@
-		<div id="footer">Copyright Piti (piti@pt.lu)</div>
+
+            <div id="footer">(c) Copyright <?=$config['display']['title']?></div>
+        </div>
 	</body>
 </html>

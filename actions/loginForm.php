@@ -16,25 +16,20 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-	$login=isset($_POST['login'])?$_POST['login']:'';
-	$password=isset($_POST['password'])?$_POST['password']:'';
-
-	$query="SELECT * FROM users WHERE login='$login' AND password='$password';";
-
-	$result=dbQuery($query, $conn);
-
-	//get result
-	if ($row=mysql_fetch_assoc($result))
-	{
-		$_SESSION['login']=$row['login'];
-		$_SESSION['id_users']=$row['id_users'];
-        successMessage("Welcome ".$row['login']);
-	}
-	else
-	{
-		errorMessage("Wrong username or password");
-	}
-
-	header('Location:index.php');
-	exit;
+$view.=
+<<<LOGIN
+    <div id="loginForm">
+        <form name="loginForm" action="index.php?action=login.php" method="post">
+            <label for="login">Login:</label>
+            <br/>
+            <input type="text" name="login" id="login"/>
+            <br/>
+            <label for="password">Password:</label>
+            <br/>
+            <input type="password" name="password" id="password"/>
+            <br/>
+            <input type="submit" name="submit" value="submit"/>
+        </form>
+        <a href="/index.php?action=forgot.php">I forgot my password</a>
+    </div>
+LOGIN;

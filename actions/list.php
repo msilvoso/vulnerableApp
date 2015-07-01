@@ -27,7 +27,7 @@
 		$search=$_GET['search'];
 		$query="SELECT * FROM entries WHERE entry_text LIKE '%$search%' ORDER BY entry_date DESC";
 	}
-	
+
 	$result=dbQuery($query, $conn);
 
 	$view='';
@@ -45,16 +45,18 @@
 	       <label for="search">Search</label>
 	       <input type="text" name="search" value="$search"/>
 	       <input type="submit" name="submit" value="search"/>
-	</form>  
+	</form>
 SEARCH;
-	
+
 	while($row=mysql_fetch_row($result))
 	{
+		$view.="<h2 style='text-align:".$row[3]."'>$row[1]</h2>";
 		$view.="<div class='date'>";
-		$view.=$row[2];
+		$view.=$row[5];
 		$view.="</div>";
 		$view.="<div class='entry'>";
-		$view.=preg_replace('/\n/',"<br/>",$row[1]);
+		$view.="<div class='".$row[3]."'><img src='/pictures/".$row[2]."' width='200' /></div>";
+		$view.=preg_replace('/\n/',"<br/>",$row[4]);
 		$view.="</div>";
 		//comments
 		$query="SELECT * FROM comments LEFT JOIN users ON users.id_users=comments.id_users WHERE id_entries=".$row[0]." ORDER BY comment_date";

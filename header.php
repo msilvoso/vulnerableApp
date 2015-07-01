@@ -1,20 +1,30 @@
 <html>
 	<head>
 		<title><?=$config['display']['title']?></title>
-		<style type="text/css">
-			body{width:1000px;margin-left:auto;margin-right:auto;}
-			#header{padding:10px;height:100px;}
-			#footer{padding:10px;height:50px;color:silver;font-size:10px;}
-			#main{padding:10px;}
-			#right{margin-left:20px;margin-bottom:20px;padding:10px;width:200px;float:right;background-color:lightblue;}
-			.error{color:red;font-size:larger;}
-			.date{color:dodgerblue;font-size:larger;}
-			.entry{color:black;}
-			.commentDate{color:silver;position:relative;left:20px;top:5px;font-size:smaller;}
-			.comment{color:grey;position:relative;left:20px;top:5px;}
-		</style>
+		<link rel="stylesheet" media="screen" href="/css/main.css" />
 	</head>
 	<body>
-		<div id="header">
-			<h1><?=$config['display']['title']?></h1>
-		</div>
+		<nav id="top-bar" class="show">
+			<div class="row">
+				<p class="left"><script>document.write(Date())</script></p>
+				<ul class="right inline-list">
+					<li><a href="#">E-Paper</a></li>
+					<li><a href="#">Subscribe</a></li>
+<?php
+if (isset($_SESSION['login']) && !empty($_SESSION['login'])):
+?>
+	<li><a href="/?action=logout.php">Logout</a></li>
+<?php
+else:
+?>
+	<li><a href="/?action=loginForm.php">Login</a></li>
+<?php
+endif;
+?>
+				</ul>
+			</div>
+		</nav>
+		<div class="content">
+			<div id="header">
+				<h1 onclick="document.location='/';"><?=$config['display']['title']?></h1>
+			</div>

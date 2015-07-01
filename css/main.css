@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'UnifrakturMaguntia';
+  font-style: normal;
+  font-weight: 400;
+  src: local('UnifrakturMaguntia'), url(/css/unifrakturmaguntia.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+html {
+  font-family:sans-serif;
+}
+
+.content {
+  width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+a {
+  background:transparent;
+}
+
+a:focus {
+  outline:thin dotted;
+}
+
+a:active,a:hover {
+  outline:0;
+}
+
+h1 {
+  font-size:50px;
+}
+
+h2 {
+  margin-top:50px;
+}
+
+#header {
+  padding:10px;
+  height:100px;
+  font-family:UnifrakturMaguntia;
+  text-align:center;
+}
+
+#footer {
+  padding:10px;
+  height:50px;
+  color:silver;
+  font-size:10px;
+}
+
+#main {
+  padding:10px;
+}
+
+#loginForm {
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px;
+  padding:10px;
+  width:200px;
+  background-color:lightblue;
+}
+
+.error {
+  color:red;
+  font-size:larger;
+}
+
+.success {
+  color:green;
+  font-size:larger;
+}
+
+.date {
+  color:dodgerblue;
+  font-size:larger;
+}
+
+.entry {
+  color:black;
+}
+
+.commentDate {
+  color:silver;
+  position:relative;
+  left:20px;top:5px;
+  font-size:smaller;
+}
+
+.comment {
+  color:grey;
+  position:relative;
+  left:20px;top:5px;
+}
+
+img {
+  margin-bottom:50px;
+}
+
+.left {
+  float:left;
+}
+
+.left img {
+  margin-right:100px;
+}
+
+.right {
+  float:right;
+}
+
+.right img {
+  margin-left:100px;
+}
+
+#top-bar {
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    letter-spacing: 1px;
+    padding: 0;
+    background-color: #0066CC;
+    color: white;
+}
+
+#top-bar p, #top-bar ul, #top-bar li {
+    margin: 0;
+}
+
+#top-bar p, #top-bar li a {
+    font-size: 0.875em;
+    max-height: 29px;
+    padding: 5px 10px;
+}
+#top-bar p {
+    padding: 5px 10px 5px 20px;
+}
+#top-bar li:hover, #top-bar li a:hover {
+    background: none repeat scroll 0 0 white;
+}
+#top-bar li:hover, body.de #top-bar li a:hover {
+    color: #0f9cd8;
+}
+
+#top-bar li a {
+    color: white;
+}
+
+.row {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row.collapse > .column, .row.collapse > .columns {
+    float: left;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+.row.collapse .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row .row {
+    margin: 0 -0.625em;
+    max-width: none;
+    width: auto;
+}
+
+.row .row:before, .row .row:after {
+    content: " ";
+    display: table;
+}
+
+.row .row:after {
+    clear: both;
+}
+
+.row .row.collapse {
+    margin: 0;
+    max-width: none;
+    width: auto;
+}
+
+.row .row.collapse:before, .row .row.collapse:after {
+    content: " ";
+    display: table;
+}
+
+.row .row.collapse:after {
+    clear: both;
+}
+
+.inline-list {
+    list-style: none outside none;
+    margin: 0 0 1.0625em -1.375em;
+    overflow: hidden;
+    padding: 0;
+}
+.inline-list > li {
+    display: block;
+    float: left;
+    list-style: none outside none;
+    margin-left: 1.375em;
+}
+.inline-list > li > * {
+    display: block;
+}

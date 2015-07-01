@@ -27,7 +27,7 @@ require_once 'includes/functions.php';
  */
 if (isset($_GET['action']) && !empty($_GET['action']))
 {
-	if ((!isset($_SESSION['login']) || empty($_SESSION['login'])) && $_GET['action']!='login.php' && $_GET['action']!='forgot.php')
+	if ((!isset($_SESSION['login']) || empty($_SESSION['login'])) && $_GET['action']!='login.php' && $_GET['action']!='forgot.php' && $_GET['action']!='loginForm.php')
 	{
 		require_once 'actions/list.php';
 		errorMessage('You have to be logged in to execute this action');
@@ -47,36 +47,19 @@ else
  */
 //header
 require_once 'header.php';
-
-//login
-if (isset($_SESSION['login']) && !empty($_SESSION['login'])):
-?>
-	<div id="right">
-		<p>Welcome <?=$_SESSION['login']?></p>
-		<p><a href="/index.php?action=logout.php">logout</a>
-	</div>
-<?php
-else:
-?>
-	<div id="right">
-		<form name="loginForm" action="index.php?action=login.php" method="post">
-			<label for="login">Login:</label>
-			<br/>
-			<input type="text" name="login" id="login"/>
-			<br/>
-			<label for="password">Password:</label>
-			<br/>
-			<input type="password" name="password" id="password"/>
-			<br/>
-			<input type="submit" name="submit" value="submit"/>
-		</form>
-        <a href="/index.php?action=forgot.php">I forgot my password</a>
-	</div>
-<?php
-endif;
 ?>
 <div id="main">
 <?php
+if (isset($_SESSION['success']) && is_array($_SESSION['success']) && count($_SESSION['success'])) //errors
+{
+    foreach($_SESSION['success'] as $successMessage):
+?>
+        <div class="success"><?=$successMessage?></div>
+<?php
+    endforeach;
+    echo "<br/>";
+    unset($_SESSION['success']);
+}
 if (isset($_SESSION['error']) && is_array($_SESSION['error']) && count($_SESSION['error'])) //errors
 {
 	foreach($_SESSION['error'] as $errorMessage):
