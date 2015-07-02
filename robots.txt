@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /phpmyadmin/
 Disallow: /phpinfo.php
 Disallow: /config.ini
+Disallow: /config.ini
+Disallow: /?action=loginForm.php

@@ -17,7 +17,7 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])):
 <?php
 else:
 ?>
-	<li><a href="/?action=loginForm.php">Login</a></li>
+	<!--<li><a href="/?action=loginForm.php">Login</a></li>-->
 <?php
 endif;
 ?>
