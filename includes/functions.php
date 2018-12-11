@@ -45,7 +45,7 @@ function dbQuery($query,$conn)
 	
 	//check result
 	if (!$result) {
-		$message  = 'Invalid query: ' . mysqli_error() . "\n";
+		$message  = 'Invalid query: ' . mysqli_error($conn) . "\n";
 		$message .= 'Whole query: ' . $query;
 		die($message);
 	}
