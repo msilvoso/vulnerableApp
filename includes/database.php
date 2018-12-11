@@ -20,8 +20,8 @@
 /*
  * Database connection
  */
-$conn=mysql_pconnect($config['database']['server'],$config['database']['user'],$config['database']['password']);
-if (mysql_select_db($config['database']['name'],$conn)===false)
+$conn=mysqli_connect($config['database']['server'],$config['database']['user'],$config['database']['password']);
+if (mysqli_select_db($conn, $config['database']['name'])===false)
 {
 	die('could not connect!');
 }

@@ -48,7 +48,7 @@
 	</form>  
 SEARCH;
 	
-	while($row=mysql_fetch_row($result))
+	while($row=mysqli_fetch_row($result))
 	{
 		$view.="<div class='date'>";
 		$view.=$row[2];
@@ -59,7 +59,7 @@ SEARCH;
 		//comments
 		$query="SELECT * FROM comments LEFT JOIN users ON users.id_users=comments.id_users WHERE id_entries=".$row[0]." ORDER BY comment_date";
 		$commentsRes=dbQuery($query, $conn);
-		while($rowComm=mysql_fetch_row($commentsRes))
+		while($rowComm=mysqli_fetch_row($commentsRes))
 		{
 			$view.="<div class='commentDate'>";
 			$view.="by ".$rowComm[6]." on ".$rowComm[3];

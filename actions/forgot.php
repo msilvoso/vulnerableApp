@@ -25,7 +25,7 @@
 
         $result=dbQuery($query, $conn);
         //get result
-        if ($row=mysql_fetch_assoc($result))
+        if ($row=mysqli_fetch_assoc($result))
         {
             /*
                 send the password - not relevant in the application

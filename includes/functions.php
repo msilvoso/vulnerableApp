@@ -41,11 +41,11 @@ function errorMessage($msg)
  */
 function dbQuery($query,$conn)
 {
-	$result=mysql_query($query,$conn);
+	$result=mysqli_query($conn, $query);
 	
 	//check result
 	if (!$result) {
-		$message  = 'Invalid query: ' . mysql_error() . "\n";
+		$message  = 'Invalid query: ' . mysqli_error() . "\n";
 		$message .= 'Whole query: ' . $query;
 		die($message);
 	}
