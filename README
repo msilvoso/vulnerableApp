@@ -10,6 +10,11 @@ STIDIA Code Audit - VulnerableApp.ods contains an exhaustive code review
 done by an independent company (I am not affiliated in any way with this company). 
 This document has been provided as a 'solution' to this exercice.
 
+trap.php - Challenge taken from tdhack.com - Challenge Net 26
+babyphp.php - Challenge taken from the capture de flag challenge - hack.lu 2018 - (c) Fluxfingers
+lolcat.html, lolcat.php - inspired by Saumil Shah's talk at the hack.lu 2014 http://archive.hack.lu/2014/hacking_with_pictures.pdf
+
+----------------------------------------------------------------------
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
